@@ -1,135 +1,234 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sander Roesink - Shell Resources</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Sander Roesink - Shell Resources</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-        body {
-            font-family: 'Courier New', monospace;
-            background-color: #1e1e1e;
-            color: #d4d4d4;
-            line-height: 1.6;
-            padding: 20px;
-        }
+            body {
+                font-family: "Courier New", monospace;
+                background-color: #222222;
+                color: #FAF3E1;
+                line-height: 1.6;
+                padding: 20px;
+            }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 40px 20px;
+            }
 
-        h1 {
-            color: #4ec9b0;
-            border-bottom: 2px solid #4ec9b0;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
+            h1 {
+                color: #FF6D1F;
+                border-bottom: 2px solid #FF6D1F;
+                padding-bottom: 10px;
+                margin-bottom: 30px;
+            }
 
-        h2 {
-            color: #569cd6;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
+            h2 {
+                color: #FF6D1F;
+                margin-top: 30px;
+                margin-bottom: 15px;
+            }
 
-        .info-grid {
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 10px 20px;
-            margin-bottom: 30px;
-        }
+            .info-grid {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                gap: 10px 20px;
+                margin-bottom: 30px;
+            }
 
-        .label {
-            color: #ce9178;
-            font-weight: bold;
-        }
+            .label {
+                color: #FAF3E1;
+                font-weight: bold;
+            }
 
-        a {
-            color: #3794ff;
-            text-decoration: none;
-        }
+            a {
+                color: #FF6D1F;
+                text-decoration: none;
+            }
 
-        a:hover {
-            text-decoration: underline;
-        }
+            a:hover {
+                text-decoration: underline;
+                color: #F5E7C6;
+            }
 
-        .code-block {
-            background-color: #2d2d2d;
-            border: 1px solid #3e3e3e;
-            border-radius: 5px;
-            padding: 15px;
-            margin: 15px 0;
-            overflow-x: auto;
-        }
+            .code-block {
+                background-color: #1a1a1a;
+                border: 1px solid #FF6D1F;
+                border-radius: 5px;
+                padding: 15px;
+                margin: 15px 0;
+                overflow-x: auto;
+            }
 
-        .code-block pre {
-            margin: 0;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
+            .code-block pre {
+                margin: 0;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+            }
 
-        .command {
-            color: #dcdcaa;
-        }
+            .command {
+                color: #F5E7C6;
+            }
 
-        .ssh-key {
-            color: #b5cea8;
-            font-size: 0.9em;
-        }
+            .ssh-key {
+                color: #F5E7C6;
+                font-size: 0.9em;
+            }
 
-        .section {
-            margin-bottom: 40px;
-        }
+            .section {
+                margin-bottom: 40px;
+            }
 
-        .prompt {
-            color: #4ec9b0;
-            margin-right: 5px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>$ whoami</h1>
+            .prompt {
+                color: #FF6D1F;
+                margin-right: 1em;
+                user-select: none;
+            }
 
-        <div class="section">
-            <div class="info-grid">
-                <span class="label">Naam:</span>
-                <span>Sander Roesink</span>
+            .code-block-wrapper {
+                position: relative;
+            }
 
-                <span class="label">Geboortedatum:</span>
-                <span>27 mei 1987</span>
+            .copy-btn {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background-color: #222222;
+                color: #FAF3E1;
+                border: 1px solid #FF6D1F;
+                border-radius: 3px;
+                padding: 5px 10px;
+                font-family: "Courier New", monospace;
+                font-size: 0.85em;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
 
-                <span class="label">Woonplaats:</span>
-                <span>Hengelo</span>
+            .copy-btn:hover {
+                background-color: #FF6D1F;
+                border-color: #FF6D1F;
+                color: #222222;
+            }
 
-                <span class="label">GitHub:</span>
-                <a href="https://github.com/sjroesink" target="_blank">github.com/sjroesink</a>
+            .copy-btn:active {
+                background-color: #F5E7C6;
+                border-color: #F5E7C6;
+                color: #222222;
+            }
 
-                <span class="label">LinkedIn:</span>
-                <a href="https://www.linkedin.com/in/sander-roesink-63791210a/" target="_blank">linkedin.com/in/sander-roesink</a>
+            .copy-btn.copied {
+                background-color: #FF6D1F;
+                border-color: #FF6D1F;
+                color: #222222;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>$ whoami</h1>
+
+            <div class="section">
+                <div class="info-grid">
+                    <span class="label">Name:</span>
+                    <span>Sander Roesink</span>
+
+                    <span class="label">Date of Birth:</span>
+                    <span>May 27, 1987</span>
+
+                    <span class="label">City:</span>
+                    <span>Hengelo</span>
+
+                    <span class="label">GitHub:</span>
+                    <a href="https://github.com/sjroesink" target="_blank"
+                        >github.com/sjroesink</a
+                    >
+
+                    <span class="label">LinkedIn:</span>
+                    <a
+                        href="https://www.linkedin.com/in/sander-roesink-63791210a/"
+                        target="_blank"
+                        >linkedin.com/in/sander-roesink</a
+                    >
+                </div>
+            </div>
+
+            <h2>$ cat ~/.ssh/id_ed25519.pub</h2>
+            <div class="section">
+                <div class="code-block-wrapper">
+                    <div class="code-block">
+                        <pre class="ssh-key">
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJowiiOcgQV7Je9F1LABgXMvxae/b/CKgjiPjRsNba0b Sander Roesink SSH Key</pre
+                        >
+                    </div>
+                    <button
+                        class="copy-btn"
+                        onclick="
+                            copyToClipboard(
+                                this,
+                                'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJowiiOcgQV7Je9F1LABgXMvxae/b/CKgjiPjRsNba0b Sander Roesink SSH Key',
+                            )
+                        "
+                    >
+                        copy
+                    </button>
+                </div>
+            </div>
+
+            <h2>$ Quick SSH Authorization</h2>
+            <div class="section">
+                <p style="margin-bottom: 15px">
+                    Automatically add my SSH key to your authorized_keys:
+                </p>
+                <div class="code-block-wrapper">
+                    <div class="code-block">
+                        <pre><span class="prompt">$</span><span class="command">curl -sSL https://sh.sander.ninja/authorize.sh | bash</span></pre>
+                    </div>
+                    <button
+                        class="copy-btn"
+                        onclick="
+                            copyToClipboard(
+                                this,
+                                'curl -sSL https://sh.sander.ninja/authorize.sh | bash',
+                            )
+                        "
+                    >
+                        copy
+                    </button>
+                </div>
             </div>
         </div>
 
-        <h2>$ cat ~/.ssh/id_ed25519.pub</h2>
-        <div class="section">
-            <div class="code-block">
-                <pre class="ssh-key">ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJowiiOcgQV7Je9F1LABgXMvxae/b/CKgjiPjRsNba0b Sander Roesink SSH Key</pre>
-            </div>
-        </div>
+        <script>
+            function copyToClipboard(button, text) {
+                navigator.clipboard
+                    .writeText(text)
+                    .then(function () {
+                        const originalText = button.textContent;
+                        button.textContent = "copied!";
+                        button.classList.add("copied");
 
-        <h2>$ Quick SSH Authorization</h2>
-        <div class="section">
-            <p style="margin-bottom: 15px;">Voeg mijn SSH key automatisch toe aan je authorized_keys:</p>
-            <div class="code-block">
-                <pre><span class="prompt">$</span> <span class="command">curl -sSL https://sh.sander.ninja/authorize.sh | bash</span></pre>
-            </div>
-        </div>
-    </div>
-</body>
+                        setTimeout(function () {
+                            button.textContent = originalText;
+                            button.classList.remove("copied");
+                        }, 2000);
+                    })
+                    .catch(function (err) {
+                        console.error("Failed to copy: ", err);
+                        button.textContent = "failed";
+                        setTimeout(function () {
+                            button.textContent = "copy";
+                        }, 2000);
+                    });
+            }
+        </script>
+    </body>
 </html>
