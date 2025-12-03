@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sander Roesink - Shell Resources</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: #4ec9b0;
+            border-bottom: 2px solid #4ec9b0;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #569cd6;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 10px 20px;
+            margin-bottom: 30px;
+        }
+
+        .label {
+            color: #ce9178;
+            font-weight: bold;
+        }
+
+        a {
+            color: #3794ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .code-block {
+            background-color: #2d2d2d;
+            border: 1px solid #3e3e3e;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            overflow-x: auto;
+        }
+
+        .code-block pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .command {
+            color: #dcdcaa;
+        }
+
+        .ssh-key {
+            color: #b5cea8;
+            font-size: 0.9em;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .prompt {
+            color: #4ec9b0;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>$ whoami</h1>
+
+        <div class="section">
+            <div class="info-grid">
+                <span class="label">Naam:</span>
+                <span>Sander Roesink</span>
+
+                <span class="label">Geboortedatum:</span>
+                <span>27 mei 1987</span>
+
+                <span class="label">Woonplaats:</span>
+                <span>Hengelo</span>
+
+                <span class="label">GitHub:</span>
+                <a href="https://github.com/sjroesink" target="_blank">github.com/sjroesink</a>
+
+                <span class="label">LinkedIn:</span>
+                <a href="https://www.linkedin.com/in/sander-roesink-63791210a/" target="_blank">linkedin.com/in/sander-roesink</a>
+            </div>
+        </div>
+
+        <h2>$ cat ~/.ssh/id_ed25519.pub</h2>
+        <div class="section">
+            <div class="code-block">
+                <pre class="ssh-key">ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJowiiOcgQV7Je9F1LABgXMvxae/b/CKgjiPjRsNba0b Sander Roesink SSH Key</pre>
+            </div>
+        </div>
+
+        <h2>$ Quick SSH Authorization</h2>
+        <div class="section">
+            <p style="margin-bottom: 15px;">Voeg mijn SSH key automatisch toe aan je authorized_keys:</p>
+            <div class="code-block">
+                <pre><span class="prompt">$</span> <span class="command">curl -sSL https://sh.sander.ninja/authorize.sh | bash</span></pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
