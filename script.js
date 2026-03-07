@@ -26,3 +26,33 @@ document.querySelectorAll('.copy-btn').forEach(btn => {
         });
     });
 });
+
+// Scroll-triggered animations with stagger
+const animateElements = document.querySelectorAll('[data-animate]');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            const el = entry.target;
+            const staggerDelay = el.classList.contains('project-card') ?
+                [...document.querySelectorAll('.project-card')].indexOf(el) * 100 : 0;
+            setTimeout(() => {
+                el.classList.add('animate-in');
+            }, staggerDelay);
+            observer.unobserve(el);
+        }
+    });
+}, { threshold: 0.1 });
+
+animateElements.forEach(el => observer.observe(el));
+
+// Cursor-tracking glow on project cards
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+    });
+});

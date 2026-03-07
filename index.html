@@ -6,7 +6,8 @@
     <title>Sander Roesink</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,8 +15,8 @@
         <nav>
             <a href="#" class="logo">roesink.dev</a>
             <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
+                <a href="#about">ABOUT</a>
+                <a href="#projects">PROJECTS</a>
                 <a href="#ssh">SSH</a>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">
                     <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -26,52 +27,70 @@
     </header>
 
     <main>
-        <section class="hero" id="about">
-            <h1>Sander Roesink</h1>
+        <section class="hero" id="about" data-animate>
+            <h1>Sander <span class="highlight">Roesink</span></h1>
             <p class="subtitle">Software Developer &middot; Hengelo</p>
-            <p class="bio">Born May 27, 1987. Building tools that make developers' lives easier.</p>
+            <p class="bio">Born May 27, 1987. Building random side projects, one idea at a time.</p>
             <div class="social-links">
-                <a href="https://github.com/sjroesink" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://linkedin.com/in/sander-roesink-63791210a/" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/sjroesink" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="https://linkedin.com/in/sander-roesink-63791210a/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+            <div class="scroll-indicator">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
             </div>
         </section>
 
         <section class="projects" id="projects">
-            <h2>Projects</h2>
+            <h2 data-animate>Projects</h2>
             <div class="project-grid">
-                <a href="https://everythingbrowser.roesink.dev/" target="_blank" rel="noopener" class="project-card">
+                <a href="https://everythingbrowser.roesink.dev/" target="_blank" rel="noopener" class="project-card" data-animate data-number="01">
                     <h3>EverythingBrowser</h3>
-                    <p>A modern, open-source desktop application that unifies file management across multiple storage backends. Connect to SFTP servers, Backblaze B2, Docker volumes, and your local filesystem from a single, blazing-fast interface. Built with Rust, React, and Tauri.</p>
+                    <p>A modern, open-source desktop application that unifies file management across multiple storage backends. Built with Rust, React, and Tauri.</p>
                     <span class="project-link">View project &rarr;</span>
                 </a>
-                <a href="https://openagentmanager.roesink.dev/" target="_blank" rel="noopener" class="project-card">
+                <a href="https://openagentmanager.roesink.dev/" target="_blank" rel="noopener" class="project-card" data-animate data-number="02">
                     <h3>OpenAgentManager</h3>
-                    <p>The open desktop environment for AI coding agents. A cross-platform application that serves as a unified runtime for multiple AI coding agents including Claude Code, Gemini CLI, and others. Parallel execution, live streaming, diff review, and git worktree isolation.</p>
+                    <p>The open desktop environment for AI coding agents. Parallel execution, live streaming, diff review, and git worktree isolation.</p>
                     <span class="project-link">View project &rarr;</span>
                 </a>
-                <a href="https://buddio.roesink.dev/" target="_blank" rel="noopener" class="project-card">
+                <a href="https://buddio.roesink.dev/" target="_blank" rel="noopener" class="project-card" data-animate data-number="03">
                     <h3>Buddio</h3>
-                    <p>A desktop helper that integrates AI assistance directly into your workflow. Summarize standup notes, search tasks, rewrite messages, and execute repetitive dev commands safely. Works across Windows, macOS, and Linux.</p>
+                    <p>A desktop helper that integrates AI assistance directly into your workflow. Summarize notes, search tasks, and execute dev commands safely.</p>
+                    <span class="project-link">View project &rarr;</span>
+                </a>
+                <a href="https://kids.roesink.dev/" target="_blank" rel="noopener" class="project-card" data-animate data-number="04">
+                    <h3>Kids Playground</h3>
+                    <p>A colorful, interactive playground for kids to explore fun mini-games and activities. Built with React and designed for little hands.</p>
                     <span class="project-link">View project &rarr;</span>
                 </a>
             </div>
         </section>
 
         <section class="ssh-section" id="ssh">
-            <h2>SSH</h2>
-            <div class="ssh-card">
-                <h3>Public Key</h3>
-                <div class="code-block">
-                    <code id="sshKey">ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICqQkOB/2GefIHVgvqGcSIRuGz5cZz03iECD2W4NUy2D</code>
-                    <button class="copy-btn" data-target="sshKey">Copy</button>
+            <span class="section-label" data-animate>SSH</span>
+            <div class="ssh-content">
+                <div class="ssh-card" data-animate>
+                    <h3>Public Key</h3>
+                    <div class="code-row">
+                        <div class="code-block">
+                            <code id="sshKey">ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICqQkOB/2GefIHVgvqGcSIRuGz5cZz03iECD2W4NUy2D</code>
+                        </div>
+                        <button class="copy-btn" data-target="sshKey">Copy</button>
+                    </div>
                 </div>
-            </div>
-            <div class="ssh-card">
-                <h3>Quick Authorize</h3>
-                <p class="ssh-description">Add my public key to your authorized hosts:</p>
-                <div class="code-block">
-                    <code id="authorizeCmd">curl -sSL https://roesink.dev/authorize.sh | bash</code>
-                    <button class="copy-btn" data-target="authorizeCmd">Copy</button>
+                <div class="ssh-card" data-animate>
+                    <h3>Quick Authorize</h3>
+                    <p class="ssh-description">Add my public key to your authorized hosts:</p>
+                    <div class="code-row">
+                        <div class="code-block">
+                            <code id="authorizeCmd">curl -sSL https://roesink.dev/authorize.sh | bash</code>
+                        </div>
+                        <button class="copy-btn" data-target="authorizeCmd">Copy</button>
+                    </div>
                 </div>
             </div>
         </section>
