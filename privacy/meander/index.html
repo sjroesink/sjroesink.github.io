@@ -47,14 +47,15 @@
             <ul>
                 <li>Garmin asks you to approve the connection on its own website. Meander never sees your Garmin password.</li>
                 <li>Meander receives an access token, a refresh token and your Garmin user ID. These are stored encrypted. They are linked only to an anonymous session cookie in your browser, not to your name or email address.</li>
-                <li>Meander uses the connection only to send a course when you explicitly ask it to. A course contains the route's name, path, distance, elevation and activity type (running or walking).</li>
+                <li>Meander uses the connection only to send a course when you explicitly ask it to. A course contains the route's name, path, distance, elevation, activity type (running or walking) and a link back to the route in Meander.</li>
+                <li>For each route you send, Meander remembers the Garmin course ID and its link in Garmin Connect, linked to the same anonymous session, so the route keeps showing where to find it in Garmin Connect.</li>
                 <li>Meander does not read your activities, health data or any other data from your Garmin account.</li>
             </ul>
-            <p>You can disconnect at any time in Meander, or by removing Meander from the connected apps in your Garmin Connect account. In both cases Meander deletes the stored tokens and your Garmin user ID right away. Courses you already sent stay in Garmin Connect until you delete them there. Garmin's own handling of your data is described in the <a href="https://www.garmin.com/privacy/connect/" target="_blank" rel="noopener">Garmin privacy policy</a>.</p>
+            <p>You can disconnect at any time in Meander, or by removing Meander from the connected apps in your Garmin Connect account. In both cases Meander deletes the stored tokens, your Garmin user ID and the course IDs it remembered right away. Courses you already sent stay in Garmin Connect until you delete them there. Garmin's own handling of your data is described in the <a href="https://www.garmin.com/privacy/connect/" target="_blank" rel="noopener">Garmin privacy policy</a>.</p>
 
             <h3>Who processes Garmin data</h3>
             <ul>
-                <li>The Garmin data Meander holds (the tokens and your Garmin user ID) is stored and processed only on my own server in the Netherlands. Meander talks to Garmin directly from that server.</li>
+                <li>The Garmin data Meander holds (the tokens, your Garmin user ID and the IDs of courses you sent) is stored and processed only on my own server in the Netherlands. Meander talks to Garmin directly from that server.</li>
                 <li>Cloudflare, the reverse proxy in front of Meander, carries the encrypted traffic between your browser and Meander, including the return from Garmin's consent screen. It does not store or use Garmin data.</li>
                 <li>No other hosting provider, integration partner, technology vendor or data processing service receives Garmin data.</li>
                 <li>Garmin data is never sold, and it is not shared with or disclosed to any third party.</li>
@@ -63,7 +64,7 @@
 
             <h3>Your Garmin data and your choices</h3>
             <ul>
-                <li><strong>Withdraw consent and delete:</strong> click Disconnect in Meander, or remove Meander in Garmin Connect. Meander then revokes its access at Garmin where possible and deletes the stored tokens and Garmin user ID.</li>
+                <li><strong>Withdraw consent and delete:</strong> click Disconnect in Meander, or remove Meander in Garmin Connect. Meander then revokes its access at Garmin where possible and deletes the stored tokens, Garmin user ID and remembered course IDs.</li>
                 <li><strong>Access, export or correct:</strong> email <a href="mailto:sander@roesink.dev">sander@roesink.dev</a> to receive a copy of the Garmin-related data Meander holds about your connection, or to have it corrected or deleted. Include the Garmin user ID or the approximate time you connected, so I can find it.</li>
             </ul>
 
